@@ -357,7 +357,9 @@ section {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   margin-top: 18px;
+  opacity: 1;
   overflow: hidden;
+  transform: none;
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -394,7 +396,11 @@ section {
 }
 
 .project-panels {
-  display: none;
+  display: none !important;
+}
+
+.pdf-viewer {
+  display: none !important;
 }
 
 .project-panel[hidden] {
