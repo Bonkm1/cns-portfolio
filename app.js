@@ -49,3 +49,45 @@ window.addEventListener("load", () => {
   updateProgress();
   setActiveNav();
 });
+
+const pdfViewer = document.querySelector("#pdf-viewer");
+const pdfFrame = document.querySelector("#pdf-frame");
+const pdfTitle = document.querySelector("#pdf-title");
+const pdfOpenDirect = document.querySelector("#pdf-open-direct");
+
+const openPdfViewer = (link) => {
+  const card = link.closest(".project-card");
+  const title = card?.querySelector("h3")?.textContent?.trim() || "Tài liệu PDF";
+  const pdfUrl = link.getAttribute("href");
+
+  pdfTitle.textContent = title;
+  pdfOpenDirect.href = pdfUrl;
+  pdfFrame.src = `${pdfUrl}#toolbar=1&navpanes=0`;
+  pdfViewer.classList.add("active");
+  pdfViewer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("pdf-open");
+};
+
+const closePdfViewer = () => {
+  pdfViewer.classList.remove("active");
+  pdfViewer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("pdf-open");
+  pdfFrame.src = "";
+};
+
+document.querySelectorAll(".file-link").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    openPdfViewer(link);
+  });
+});
+
+document.querySelectorAll("[data-pdf-close]").forEach((button) => {
+  button.addEventListener("click", closePdfViewer);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && pdfViewer.classList.contains("active")) {
+    closePdfViewer();
+  }
+});

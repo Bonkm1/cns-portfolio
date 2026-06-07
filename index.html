@@ -195,6 +195,23 @@
       <a href="#top">Lên đầu trang</a>
     </footer>
 
+    <div class="pdf-viewer" id="pdf-viewer" aria-hidden="true">
+      <div class="pdf-viewer__backdrop" data-pdf-close></div>
+      <section class="pdf-viewer__panel" role="dialog" aria-modal="true" aria-labelledby="pdf-title">
+        <header class="pdf-viewer__header">
+          <div>
+            <span>Đang xem sản phẩm</span>
+            <h2 id="pdf-title">Tài liệu PDF</h2>
+          </div>
+          <div class="pdf-viewer__actions">
+            <a id="pdf-open-direct" href="#" target="_blank" rel="noreferrer">Mở tab riêng</a>
+            <button type="button" data-pdf-close>Đóng</button>
+          </div>
+        </header>
+        <iframe id="pdf-frame" title="Khung xem tài liệu PDF"></iframe>
+      </section>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
