@@ -80,30 +80,40 @@
         </div>
 
         <div class="project-tabs reveal" role="tablist" aria-label="Chọn bài tập">
-          <button class="project-tab active" id="project-tab-1" type="button" role="tab" aria-selected="true" aria-controls="project-1" data-project-tab="1">
+          <button class="project-tab active" id="project-tab-1" type="button" role="tab" aria-selected="true" aria-controls="project-pdf-panel" data-project-tab="1" data-pdf="bai-1-thuc-hanh-quan-ly-tep-windows.pdf" data-title="Thực hành quản lý tệp và thư mục Windows">
             <span aria-hidden="true">📁</span> Bài 1 — Tệp & thư mục
           </button>
-          <button class="project-tab" id="project-tab-2" type="button" role="tab" aria-selected="false" aria-controls="project-2" data-project-tab="2">
+          <button class="project-tab" id="project-tab-2" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="2" data-pdf="bai-2-tim-kiem-danh-gia-thong-tin-hoc-thuat.pdf" data-title="Tìm kiếm và đánh giá thông tin học thuật">
             <span aria-hidden="true">🔎</span> Bài 2 — Tìm kiếm TT
           </button>
-          <button class="project-tab" id="project-tab-3" type="button" role="tab" aria-selected="false" aria-controls="project-3" data-project-tab="3">
+          <button class="project-tab" id="project-tab-3" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="3" data-pdf="bai-3-viet-prompt-hieu-qua.pdf" data-title="Viết Prompt hiệu quả cho các tác vụ học tập">
             <span aria-hidden="true">🤖</span> Bài 3 — Prompt AI
           </button>
-          <button class="project-tab" id="project-tab-4" type="button" role="tab" aria-selected="false" aria-controls="project-4" data-project-tab="4">
+          <button class="project-tab" id="project-tab-4" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="4" data-pdf="bai-4-cong-cu-hop-tac-truc-tuyen.pdf" data-title="Sử dụng công cụ hợp tác trực tuyến">
             <span aria-hidden="true">🤝</span> Bài 4 — Hợp tác số
           </button>
-          <button class="project-tab" id="project-tab-5" type="button" role="tab" aria-selected="false" aria-controls="project-5" data-project-tab="5">
+          <button class="project-tab" id="project-tab-5" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="5" data-pdf="bai-5-ai-tao-sinh-sang-tao-noi-dung.pdf" data-title="Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung">
             <span aria-hidden="true">🎨</span> Bài 5 — Sáng tạo AI
           </button>
-          <button class="project-tab" id="project-tab-6" type="button" role="tab" aria-selected="false" aria-controls="project-6" data-project-tab="6">
+          <button class="project-tab" id="project-tab-6" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="6" data-pdf="bai-6-ai-co-trach-nhiem.pdf" data-title="Sử dụng AI có trách nhiệm trong học tập và nghiên cứu">
             <span aria-hidden="true">⚖️</span> Bài 6 — AI đạo đức
           </button>
-          <button class="project-tab" id="project-tab-7" type="button" role="tab" aria-selected="false" aria-controls="project-7" data-project-tab="7">
+          <button class="project-tab" id="project-tab-7" type="button" role="tab" aria-selected="false" aria-controls="project-pdf-panel" data-project-tab="7" data-pdf="bai-7-phan-tich-tai-lieu-voi-ai.pdf" data-title="Phân tích tài liệu với trợ lý nghiên cứu AI">
             <span aria-hidden="true">📊</span> Bài 7 — Trợ lý nghiên cứu
           </button>
         </div>
 
-        <div class="project-panels">
+        <div class="inline-pdf-viewer reveal" id="project-pdf-panel" role="tabpanel" aria-labelledby="project-tab-1">
+          <header class="inline-pdf-viewer__header">
+            <div>
+              <span>Đang xem nội dung PDF</span>
+              <h3 id="project-pdf-title">Thực hành quản lý tệp và thư mục Windows</h3>
+            </div>
+          </header>
+          <iframe id="project-pdf-frame" title="Nội dung PDF bài tập" src="bai-1-thuc-hanh-quan-ly-tep-windows.pdf#toolbar=1&navpanes=0"></iframe>
+        </div>
+
+        <div class="project-panels" hidden>
           <article class="project-card project-panel reveal active" id="project-1" role="tabpanel" aria-labelledby="project-tab-1" data-project-panel="1">
             <span class="project-number">01</span>
             <h3>Thực hành quản lý tệp và thư mục Windows</h3>
@@ -231,23 +241,6 @@
       <span>Portfolio học tập - Lại Hồng Phúc</span>
       <a href="#top">Lên đầu trang</a>
     </footer>
-
-    <div class="pdf-viewer" id="pdf-viewer" aria-hidden="true">
-      <div class="pdf-viewer__backdrop" data-pdf-close></div>
-      <section class="pdf-viewer__panel" role="dialog" aria-modal="true" aria-labelledby="pdf-title">
-        <header class="pdf-viewer__header">
-          <div>
-            <span>Đang xem sản phẩm</span>
-            <h2 id="pdf-title">Tài liệu PDF</h2>
-          </div>
-          <div class="pdf-viewer__actions">
-            <a id="pdf-open-direct" href="#" target="_blank" rel="noreferrer">Mở tab riêng</a>
-            <button type="button" data-pdf-close>Đóng</button>
-          </div>
-        </header>
-        <iframe id="pdf-frame" title="Khung xem tài liệu PDF"></iframe>
-      </section>
-    </div>
 
     <script src="app.js"></script>
   </body>
