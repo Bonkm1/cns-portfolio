@@ -410,7 +410,7 @@ body.pdf-open {
   z-index: 120;
   display: grid;
   place-items: center;
-  padding: clamp(12px, 3vw, 32px);
+  padding: 10px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 220ms ease;
@@ -432,12 +432,12 @@ body.pdf-open {
   position: relative;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  width: min(1180px, 100%);
-  height: min(86vh, 920px);
+  width: min(1760px, calc(100vw - 20px));
+  height: calc(100vh - 20px);
   overflow: hidden;
   background: var(--surface);
   border: 1px solid rgba(216, 224, 233, 0.95);
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 34px 100px rgba(0, 0, 0, 0.34);
   transform: translateY(18px) scale(0.98);
   transition: transform 220ms ease;
@@ -452,7 +452,7 @@ body.pdf-open {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 16px 18px;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--line);
   background: #ffffff;
 }
@@ -468,7 +468,7 @@ body.pdf-open {
 .pdf-viewer__header h2 {
   margin: 2px 0 0;
   font-family: "Space Grotesk", "Be Vietnam Pro", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.15;
 }
 
@@ -482,10 +482,10 @@ body.pdf-open {
 .pdf-viewer__actions a,
 .pdf-viewer__actions button {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 36px;
   align-items: center;
   justify-content: center;
-  padding: 9px 14px;
+  padding: 8px 12px;
   color: #ffffff;
   background: var(--ink);
   border: 0;
@@ -582,8 +582,14 @@ body.pdf-open {
     transform: none;
   }
 
+  .pdf-viewer {
+    padding: 0;
+  }
+
   .pdf-viewer__panel {
-    height: 88vh;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
   }
 
   .pdf-viewer__header {
