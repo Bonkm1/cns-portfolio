@@ -288,19 +288,92 @@ section {
   font-size: 18px;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 28px;
+  padding: 6px 0;
+}
+
+.project-tab {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  color: #264160;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 252, 255, 0.88)),
+    rgba(255, 255, 255, 0.9);
+  border: 1px solid #bfd6ee;
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.1);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.project-tab:hover {
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.16);
+  transform: translateY(-2px);
+}
+
+.project-tab.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1685ff, #0862d7);
+  border-color: transparent;
+  box-shadow: 0 18px 38px rgba(8, 98, 215, 0.34);
+}
+
+.project-tab span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  font-size: 16px;
+}
+
+.project-tab.active span {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.project-panels {
+  max-width: 1040px;
+}
+
+.project-panel[hidden] {
+  display: none;
+}
+
+.project-panel.active {
+  animation: panelReveal 260ms ease both;
+}
+
+@keyframes panelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-card {
   position: relative;
   display: flex;
-  min-height: 430px;
+  min-height: 360px;
   flex-direction: column;
-  padding: 24px;
-  border-radius: 8px;
+  padding: clamp(26px, 4vw, 42px);
+  border-radius: 18px;
   overflow: hidden;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
@@ -330,7 +403,7 @@ section {
 .project-card h3 {
   margin: 18px 0 16px;
   font-family: "Space Grotesk", "Be Vietnam Pro", sans-serif;
-  font-size: 24px;
+  font-size: clamp(28px, 4vw, 44px);
   line-height: 1.18;
 }
 
@@ -343,7 +416,12 @@ section {
 .project-card dd {
   margin: 0 0 8px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.project-panel .file-link {
+  width: fit-content;
+  min-width: 260px;
 }
 
 .file-link {
@@ -580,6 +658,21 @@ body.pdf-open {
 
   .hero-visual {
     transform: none;
+  }
+
+  .project-tabs {
+    gap: 10px;
+  }
+
+  .project-tab {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 18px;
+  }
+
+  .project-panel .file-link {
+    width: 100%;
+    min-width: 0;
   }
 
   .pdf-viewer {

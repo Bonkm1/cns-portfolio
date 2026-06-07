@@ -50,6 +50,45 @@ window.addEventListener("load", () => {
   setActiveNav();
 });
 
+const projectTabs = Array.from(document.querySelectorAll("[data-project-tab]"));
+const projectPanels = Array.from(document.querySelectorAll("[data-project-panel]"));
+
+const activateProject = (projectId) => {
+  projectTabs.forEach((tab) => {
+    const isActive = tab.dataset.projectTab === projectId;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  projectPanels.forEach((panel) => {
+    const isActive = panel.dataset.projectPanel === projectId;
+    panel.hidden = !isActive;
+    panel.classList.toggle("active", isActive);
+    if (isActive) {
+      panel.classList.add("visible");
+    }
+  });
+};
+
+projectTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    activateProject(tab.dataset.projectTab);
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) {
+      return;
+    }
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex = (index + direction + projectTabs.length) % projectTabs.length;
+    const nextTab = projectTabs[nextIndex];
+    nextTab.focus();
+    activateProject(nextTab.dataset.projectTab);
+  });
+});
+
 const pdfViewer = document.querySelector("#pdf-viewer");
 const pdfFrame = document.querySelector("#pdf-frame");
 const pdfTitle = document.querySelector("#pdf-title");

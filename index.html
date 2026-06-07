@@ -79,8 +79,32 @@
           <p>Mỗi bài tập được trình bày theo mục tiêu, quá trình thực hiện và sản phẩm PDF cuối cùng.</p>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card reveal">
+        <div class="project-tabs reveal" role="tablist" aria-label="Chọn bài tập">
+          <button class="project-tab active" id="project-tab-1" type="button" role="tab" aria-selected="true" aria-controls="project-1" data-project-tab="1">
+            <span aria-hidden="true">📁</span> Bài 1 — Tệp & thư mục
+          </button>
+          <button class="project-tab" id="project-tab-2" type="button" role="tab" aria-selected="false" aria-controls="project-2" data-project-tab="2">
+            <span aria-hidden="true">🔎</span> Bài 2 — Tìm kiếm TT
+          </button>
+          <button class="project-tab" id="project-tab-3" type="button" role="tab" aria-selected="false" aria-controls="project-3" data-project-tab="3">
+            <span aria-hidden="true">🤖</span> Bài 3 — Prompt AI
+          </button>
+          <button class="project-tab" id="project-tab-4" type="button" role="tab" aria-selected="false" aria-controls="project-4" data-project-tab="4">
+            <span aria-hidden="true">🤝</span> Bài 4 — Hợp tác số
+          </button>
+          <button class="project-tab" id="project-tab-5" type="button" role="tab" aria-selected="false" aria-controls="project-5" data-project-tab="5">
+            <span aria-hidden="true">🎨</span> Bài 5 — Sáng tạo AI
+          </button>
+          <button class="project-tab" id="project-tab-6" type="button" role="tab" aria-selected="false" aria-controls="project-6" data-project-tab="6">
+            <span aria-hidden="true">⚖️</span> Bài 6 — AI đạo đức
+          </button>
+          <button class="project-tab" id="project-tab-7" type="button" role="tab" aria-selected="false" aria-controls="project-7" data-project-tab="7">
+            <span aria-hidden="true">📊</span> Bài 7 — Trợ lý nghiên cứu
+          </button>
+        </div>
+
+        <div class="project-panels">
+          <article class="project-card project-panel reveal active" id="project-1" role="tabpanel" aria-labelledby="project-tab-1" data-project-panel="1">
             <span class="project-number">01</span>
             <h3>Thực hành quản lý tệp và thư mục Windows</h3>
             <dl>
@@ -92,7 +116,7 @@
             <a class="file-link" href="bai-1-thuc-hanh-quan-ly-tep-windows.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-2" role="tabpanel" aria-labelledby="project-tab-2" data-project-panel="2" hidden>
             <span class="project-number">02</span>
             <h3>Tìm kiếm và đánh giá thông tin học thuật</h3>
             <dl>
@@ -104,7 +128,7 @@
             <a class="file-link" href="bai-2-tim-kiem-danh-gia-thong-tin-hoc-thuat.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-3" role="tabpanel" aria-labelledby="project-tab-3" data-project-panel="3" hidden>
             <span class="project-number">03</span>
             <h3>Viết Prompt hiệu quả cho các tác vụ học tập</h3>
             <dl>
@@ -116,7 +140,7 @@
             <a class="file-link" href="bai-3-viet-prompt-hieu-qua.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-4" role="tabpanel" aria-labelledby="project-tab-4" data-project-panel="4" hidden>
             <span class="project-number">04</span>
             <h3>Sử dụng công cụ hợp tác trực tuyến</h3>
             <dl>
@@ -128,7 +152,7 @@
             <a class="file-link" href="bai-4-cong-cu-hop-tac-truc-tuyen.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-5" role="tabpanel" aria-labelledby="project-tab-5" data-project-panel="5" hidden>
             <span class="project-number">05</span>
             <h3>Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung</h3>
             <dl>
@@ -140,7 +164,7 @@
             <a class="file-link" href="bai-5-ai-tao-sinh-sang-tao-noi-dung.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-6" role="tabpanel" aria-labelledby="project-tab-6" data-project-panel="6" hidden>
             <span class="project-number">06</span>
             <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
             <dl>
@@ -152,7 +176,7 @@
             <a class="file-link" href="bai-6-ai-co-trach-nhiem.pdf" target="_blank" rel="noreferrer">Mở sản phẩm PDF</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card project-panel reveal" id="project-7" role="tabpanel" aria-labelledby="project-tab-7" data-project-panel="7" hidden>
             <span class="project-number">07</span>
             <h3>Phân tích tài liệu với trợ lý nghiên cứu AI</h3>
             <dl>
